@@ -1,0 +1,8 @@
+{
+  "name": "SQLiteProviderExample",
+  "app_id": "3cc03071",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
