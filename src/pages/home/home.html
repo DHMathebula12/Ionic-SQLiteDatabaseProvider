@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic SQLite Provider Example
     </ion-title>
+    <ion-buttons end>
+  <button ion-button icon-only (click)="saveData()">
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+</ion-buttons>
+<ion-buttons start>
+<button ion-button icon-only (click)="getUserData()">
+<ion-icon name="add-circle"></ion-icon>
+</button>
+</ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h2>Users</h2>
+  <ion-list>
+    <ion-item-sliding *ngFor="let data of myData; let i=index">
+      <ion-item nopadding>
+        <p>
+          <span>{{data.name}}</span><br>
+          Username: {{data.user_name}}<br>
+          {{data.location}}
+        </p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="getUserData()">
+          <ion-icon name="paper"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="getUserData()">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
