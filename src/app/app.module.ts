@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SQLite } from '@ionic-native/sqlite';
 import { HttpClientModule } from '@angular/common/http';
-//import { DatabaseService } from '../providers/my-data';
+import { AddDataPage } from '../pages/add-data/add-data';
+import { Toast } from '@ionic-native/toast';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,7 +15,8 @@ import { MyDataProvider } from '../providers/my-data/my-data';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AddDataPage
   ],
   imports: [
     BrowserModule,
@@ -24,15 +26,16 @@ import { MyDataProvider } from '../providers/my-data/my-data';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AddDataPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-//    DatabaseService,
     SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MyDataProvider
+    MyDataProvider,
+    Toast
   ]
 })
 export class AppModule {}

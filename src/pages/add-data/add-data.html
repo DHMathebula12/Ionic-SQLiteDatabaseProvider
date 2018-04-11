@@ -1,0 +1,38 @@
+<!--
+  Generated template for the AddDataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AddData</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Add Data</h2>
+  <form (ngSubmit)="saveUserData()">
+    <ion-item>
+      <ion-label>Firstname</ion-label>
+      <ion-input type="text" placeholder="FullName" [(ngModel)]="data.name" name="name" required="" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lastname</ion-label>
+      <ion-input type="text" placeholder="UserName" [(ngModel)]="data.user_name" name="user_name" required="" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Location</ion-label>
+      <ion-select [(ngModel)]="data.location" name="type" required="">
+        <ion-option value="Pretoria">Pretoria</ion-option>
+        <ion-option value="Towers North">Towers North</ion-option>
+        <ion-option value="Randburg">Randburg</ion-option>
+        <ion-option value="Sandton">Sandton</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="submit" block>Save Data</button>
+  </form>
+</ion-content>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
 
 /*
   Generated class for the MyDataProvider provider.
@@ -72,10 +73,7 @@ public getUserData() {
                         user_name: res.rows.item(i).user_name,
                         location: res.rows.item(i).location
                     })
-
-                    console.log("Name From Array:" + dataArray[i].name)
                 }
-
 
             resolve(dataArray)
 

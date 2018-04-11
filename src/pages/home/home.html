@@ -8,11 +8,6 @@
     <ion-icon name="add-circle"></ion-icon>
   </button>
 </ion-buttons>
-<ion-buttons start>
-<button ion-button icon-only (click)="getUserData()">
-<ion-icon name="add-circle"></ion-icon>
-</button>
-</ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -22,9 +17,9 @@
     <ion-item-sliding *ngFor="let data of myData; let i=index">
       <ion-item nopadding>
         <p>
-          <span>{{data.name}}</span><br>
+          <span>Name: {{data.name}}</span><br>
           Username: {{data.user_name}}<br>
-          {{data.location}}
+          Location: {{data.location}}
         </p>
       </ion-item>
       <ion-item-options side="right">

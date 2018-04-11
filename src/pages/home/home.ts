@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MyDataProvider } from '../../providers/my-data/my-data';
+import { AddDataPage } from '../../pages/add-data/add-data';
 
 @Component({
   selector: 'page-home',
@@ -25,10 +26,8 @@ export class HomePage {
 //Do this before HomePage starts
   ionViewWillEnter(){this.getUserData();}
 
-saveData()
-{
-    this.databaseService.saveUserData(this.dataArray);
-}
+  //opening another view - AddDataPage
+saveData(){this.navCtrl.push(AddDataPage);}
 
 getUserData()
 {
